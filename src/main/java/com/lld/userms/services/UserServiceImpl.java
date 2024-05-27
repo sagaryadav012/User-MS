@@ -94,20 +94,20 @@ public class UserServiceImpl implements UserService{
 
         return this.tokenRepository.save(token);
     }
-    public String createJWTToken(User user){
-        Calendar c = Calendar.getInstance();
-        c.add(Calendar.DATE, 7);
-        Date sevenDaysLater = c.getTime();
-
-        // JWT Token
-        String jwtToken = Jwts.builder().claim("User",user)
-                .setIssuedAt(new Date())
-                .setExpiration(sevenDaysLater)
-                .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
-                .compact();
-
-       return jwtToken;
-    }
+//    public String createJWTToken(User user){
+//        Calendar c = Calendar.getInstance();
+//        c.add(Calendar.DATE, 7);
+//        Date sevenDaysLater = c.getTime();
+//
+//        // JWT Token
+//        String jwtToken = Jwts.builder().claim("User",user)
+//                .setIssuedAt(new Date())
+//                .setExpiration(sevenDaysLater)
+//                .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
+//                .compact();
+//
+//       return jwtToken;
+//    }
 
     @Override
     public void logout(String value) throws Exception {
